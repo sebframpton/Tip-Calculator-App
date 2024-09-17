@@ -27,8 +27,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/sebframpton/Tip-Calculator-App](https://github.com/sebframpton/Tip-Calculator-App)
+- Live Site URL: [https://sebframpton.github.io/Tip-Calculator-App/](https://sebframpton.github.io/Tip-Calculator-App/)
 
 ## My process
 
@@ -43,7 +43,7 @@ Users should be able to:
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Website - [Seb Frampton](https://sebframpton.github.io/)
+- Frontend Mentor - [@sebframpton](https://www.frontendmentor.io/profile/sebframpton)
 
 
