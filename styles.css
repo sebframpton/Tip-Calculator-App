@@ -1,0 +1,343 @@
+/* Import Font */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+/* CSS Reset */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin and padding
+  */
+* {
+  margin: 0;
+  padding: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Generic Classes */
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+/* CSS Custom Properties */
+:root {
+    /* Primary Colors */
+    --strong-cyan: hsl(172, 67%, 45%);
+
+    /* Neutral Colors */
+    --dark-cyan: hsl(183, 100%, 15%);
+    --dark-gray-cyan: hsl(186, 14%, 43%);
+    --gray-cyan: hsl(184, 14%, 56%);
+    --light-gray-cyan: hsl(185, 41%, 84%);
+    --very-light-gray-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+
+    /* validation colors */
+    --strong-red: hsl(0, 80%, 70%);
+    --normal-cyan: hsl(177, 70%, 75%);
+}
+
+/* Styling from top to bottom */
+html {
+  color: var(--dark-gray-cyan);
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.logo {
+    margin-block: 3rem;
+}
+
+main {
+    background-color: var(--light-gray-cyan);
+    width: 100%;
+    min-height: 100vh;
+    font-size: 1rem;
+    display: grid;
+    place-items: center;
+}
+
+form {
+    --radius: 2rem;
+    background-color: var(--white);
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    padding: 2rem 1.5rem;
+    display: grid;
+    gap: 2.5rem;
+    grid-template-areas: "input-section"
+        "results-section";
+    max-width: 768px;
+}
+
+.data-input {
+    display: grid;
+    gap: 2.5rem;
+    padding-inline: 0.5rem;
+    grid-area: input-section;
+}
+
+fieldset {
+    border: none;
+}
+
+.data-input__section {
+    display: grid;
+    gap: 0.3rem;
+}
+
+.data-input__section header {
+    display: flex;
+    flex-direction: column;
+}
+
+.data-input__section--grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.data-input__section--grid header {
+    grid-column: span 2;
+}
+
+.data-input__input {
+    --padding-inline: 1rem;
+    background-image: var(--image-url);
+    background-repeat: no-repeat;
+    background-position: var(--padding-inline) center;
+    border: 2px solid transparent;
+    background-color: var(--very-light-gray-cyan);
+    color: var(--dark-cyan);
+    text-align: right;
+    padding: 0.5rem var(--padding-inline);
+    width: 100%;
+}
+
+.data-input__input::placeholder {
+    color: var(--gray-cyan);
+}
+
+.data-input__input--dollar {
+    --image-url: url("./images/icon-dollar.svg");
+}
+
+.data-input__input--person {
+    --image-url: url("./images/icon-person.svg");
+}
+
+.data-input__label {
+    background-color: var(--dark-cyan);
+    color: var(--white);
+    text-align: center;
+    padding-block: 0.5rem;
+    position: relative;
+}
+
+.data-input__input, .data-input__label {
+    font-size: 1.5rem;
+    border-radius: 6px;
+}
+
+.data-input__input-radio {
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.data-input__input--custom::placeholder {
+    color: var(--dark-gray-cyan);
+}
+
+.data-results {
+    background-color: var(--dark-cyan);
+    border-radius: 16px;
+    padding: 2.5rem 1.5rem 1.5rem;
+    display: grid;
+    gap: 2rem;
+    grid-area: results-section;
+}
+
+.data-results__container {
+    display: grid;
+    gap: 2rem;
+}
+
+.data-results__paragraph {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.data-results__desc {
+    display: grid;
+}
+
+.data-results__name {
+    color: var(--white);
+}
+
+.data-results__by {
+    font-size: 1rem;
+}
+
+.data-results__output {
+    color: var(--strong-cyan);
+    font-size: 2rem;
+}
+
+button {
+    border: none;
+    background-color: var(--strong-cyan);
+    border-radius: 6px;
+    color: var(--dark-cyan);
+    text-transform: uppercase;
+    padding-block: 0.5rem;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+/* Interactive States */
+input:focus {
+    outline: none;
+}
+
+input:focus:valid {
+    border: 2px solid var(--strong-cyan);
+}
+
+.data-input__section.invalid input:not(:focus, [type="radio"]) {
+    border: 2px solid var(--strong-red);
+}
+
+.data-input__label:has(> input:checked) {
+    background-color: var(--strong-cyan);
+    color: var(--dark-cyan);
+}
+
+button:disabled {
+    opacity: 0.2;
+}
+
+button:is(:hover, :focus, :active), .data-input__label:is(:hover, :focus, :active) {
+    background-color: var(--normal-cyan);
+    color: var(--dark-cyan);
+    opacity: 1;
+}
+
+span.error {
+    display: none;
+    color: var(--strong-red);
+}
+
+.data-input__section.invalid:has( .data-input__input:not(:focus)) span.error {
+    display: inline;
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+/* Media Queries */
+@media screen and (min-width: 992px) and (max-height: 700px) {
+    main {
+        padding-block-end: 5rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    main {
+        place-content: start center;
+        gap: 8vh;
+    }
+    .logo {
+        margin-block: 15vh 0;
+    }
+    form {
+        border-radius: var(--radius);
+        grid-template-areas: "input-section results-section";
+        grid-template-columns: 1fr 1fr;
+        align-self: flex-start;
+        padding: 2rem;
+        max-width: 935px;
+    }
+    .data-input {
+        padding: 1rem 0.75rem;
+    }
+    .data-input__section header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .data-input__section--grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    .data-input__section--grid header{
+        grid-column: span 3;
+    }
+    .data-results {
+        padding: 3rem 2.5rem 2.5rem;
+    }
+    .data-results__container {
+        align-content: flex-start;
+    }
+    .data-results__output {
+        font-size: 3rem;
+    }
+    button {
+        align-self: flex-end;
+        padding-block: 0.75rem;
+    }
+}
